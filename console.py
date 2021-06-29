@@ -3,12 +3,33 @@
 console.py module
 """
 import cmd
+import models.base_model import BaseModel
+from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
+import models
+
+
+dic_obj = models.storage.all()
 
 
 class HBNBCommand(cmd.Cmd):
     """HBNB console class"""
 
     prompt = '(hbnb) '
+    __classes = {
+            'BaseModel',
+            'User',
+            'State',
+            'City',
+            'Amenity',
+            'Place',
+            'Review'
+            }
+
 
     def do_quit(self, arg):
         'Use "quit" command to exit'
@@ -20,7 +41,37 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
+        'Empty line'
         pass
 
+    def do_create(self, arg):
+        'Create a new instance of BaseModel and save in JSON'
+        arg_split = arg.split()
+        if len(arg_split) == 0:
+            print('** class name missing **')
+        elif arg_slipt[0] in HBNBCommand.__classes:
+            new_instance = eval(arg_split[0])()
+            models.storage.save()
+            print(new_instance.id)
+        else:
+            print("** class doesn't exist **")
+
+
+    def do_show(self, arg):
+        "Print tre string base on a class name and id"
+        arg_split = arg.split()
+        if len(arg_split) == 0:
+            print('** class name missing **')
+        elif arg_split[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        elif len(arg_split) == 1:
+            print('** instance id missing **')
+        elif "{}.{}".format(arg_split[0], arg_split[1]) in dic_obj.key():
+            print(dic_obj["{}.{}".format(arg_split[0], arg_split[1])])
+        else:
+            print('** no instance found **')
+    
+
+    
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
