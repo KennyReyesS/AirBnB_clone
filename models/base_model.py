@@ -2,14 +2,8 @@
 """
 base_model.py module
 """
-
-
 from datetime import datetime
 import uuid
-
-"""
-BaseModel class.
-"""
 
 
 class BaseModel():
