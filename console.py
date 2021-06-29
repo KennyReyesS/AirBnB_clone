@@ -30,7 +30,6 @@ class HBNBCommand(cmd.Cmd):
             'Review'
             }
 
-
     def do_quit(self, arg):
         """Use "quit" command to exit"""
         return True
@@ -55,7 +54,6 @@ class HBNBCommand(cmd.Cmd):
             print(new_instance.id)
         else:
             print("** class doesn't exist **")
-
 
     def do_show(self, arg):
         """Print the string base on a class name and id"""
@@ -103,9 +101,29 @@ class HBNBCommand(cmd.Cmd):
                     out_string.append(obj.__str__())
             print(out_string)
 
-                 
-    
-    
+    def do_update(self, arg):
+        """Update instance class name and id and update is save in JSON"""
+        arg_split = arg.split()
+        if len(arg_split) == 0:
+            print('** class name missing **')
+        elif arg_split[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        elif len(arg_split) == 1:
+            print('** instance id missing **')
+        elif "{}.{}".format(arg_split[0], arg_split[1]) not in dic_obj.key():
+            print('** no instance found **')
+        elif len(arg_split) == 2:
+            print('** attribute name missing **')
+        elif len(arg_split) == 3:
+            print('** value missing **')
+        else:
+            f_key = "{}.{}".format(arg_split[0], arg_split[1])
+            try:
+                setattr(dic_obj[f_key], arg_split[2], eval(arg_split[3]))
+            except:
+                setattr(dic_obj[f_key], arg_split[2], arg_split[3])
+            models.storage.save()
 
+                 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
