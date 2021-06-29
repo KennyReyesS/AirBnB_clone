@@ -32,20 +32,20 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_quit(self, arg):
-        'Use "quit" command to exit'
+        """Use "quit" command to exit"""
         return True
 
     def do_EOF(self, arg):
-        'Press "ctrl + D" to EOF'
+        """Press "ctrl + D" to EOF"""
         print()
         return True
 
     def emptyline(self):
-        'Empty line'
+        """Empty line"""
         pass
 
     def do_create(self, arg):
-        'Create a new instance of BaseModel and save in JSON'
+        """Create a new instance of BaseModel and save in JSON"""
         arg_split = arg.split()
         if len(arg_split) == 0:
             print('** class name missing **')
@@ -58,7 +58,7 @@ class HBNBCommand(cmd.Cmd):
 
 
     def do_show(self, arg):
-        "Print tre string base on a class name and id"
+        """Print the string base on a class name and id"""
         arg_split = arg.split()
         if len(arg_split) == 0:
             print('** class name missing **')
@@ -70,7 +70,21 @@ class HBNBCommand(cmd.Cmd):
             print(dic_obj["{}.{}".format(arg_split[0], arg_split[1])])
         else:
             print('** no instance found **')
-    
+
+    def do_destroy(self, arg):
+        """Delete an instance class name and id and save in JSON"""
+        arg_split = arg.split()
+        if len(arg_split) == 0:
+            print('** class name missing **')
+        elif arg_split[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        elif len(arg_split) == 1:
+            print('** instance id missing **')
+        elif "{}.{}".format(arg_split[0], arg_split[1]) in dic_obj.key():
+            del dic_obj["{}.{}".format(arg_split[0], arg_split[1])]
+            model.storage.save()
+        else:
+            print("** no instance found **")
 
     
 if __name__ == '__main__':
