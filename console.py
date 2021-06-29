@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
         arg_split = arg.split()
         if len(arg_split) == 0:
             print('** class name missing **')
-        elif arg_slipt[0] in HBNBCommand.__classes:
+        elif arg_split[0] in HBNBCommand.__classes:
             new_instance = eval(arg_split[0])()
             models.storage.save()
             print(new_instance.id)
@@ -64,7 +64,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg_split) == 1:
             print('** instance id missing **')
-        elif "{}.{}".format(arg_split[0], arg_split[1]) in dic_obj.key():
+        elif "{}.{}".format(arg_split[0], arg_split[1]) in dic_obj.items():
             print(dic_obj["{}.{}".format(arg_split[0], arg_split[1])])
         else:
             print('** no instance found **')
@@ -78,7 +78,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg_split) == 1:
             print('** instance id missing **')
-        elif "{}.{}".format(arg_split[0], arg_split[1]) in dic_obj.key():
+        elif "{}.{}".format(arg_split[0], arg_split[1]) in dic_obj.items():
             del dic_obj["{}.{}".format(arg_split[0], arg_split[1])]
             model.storage.save()
         else:
@@ -110,7 +110,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         elif len(arg_split) == 1:
             print('** instance id missing **')
-        elif "{}.{}".format(arg_split[0], arg_split[1]) not in dic_obj.key():
+        elif "{}.{}".format(arg_split[0], arg_split[1]) not in dic_obj.items():
             print('** no instance found **')
         elif len(arg_split) == 2:
             print('** attribute name missing **')
