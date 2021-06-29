@@ -86,6 +86,26 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** no instance found **")
 
+    def do_all(self, arg):
+        """Print all string of all instances"""
+        arg_split = arg.split()
+        out_string = []
+
+        if len(arg_split) == 0:
+            for obj in dic_obj.values():
+                out_string.append(obj.__str__())
+            print(out_string)
+        elif arg_split[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        else:
+            for obj in dic_obj.values():
+                if arg_split[0] == obj.__class__.__name__:
+                    out_string.append(obj.__str__())
+            print(out_string)
+
+                 
     
+    
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
