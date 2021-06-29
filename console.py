@@ -124,6 +124,6 @@ class HBNBCommand(cmd.Cmd):
                 setattr(dic_obj[f_key], arg_split[2], arg_split[3])
             models.storage.save()
 
-                 
+
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
