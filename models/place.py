@@ -3,6 +3,9 @@
 place.py module.
 """
 from models.base_model import BaseModel
+from models.city import City
+from models.user import User
+from models.amenity import Amenity
 
 
 class Place(BaseModel):
