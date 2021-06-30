@@ -21,49 +21,54 @@ All python files are interpreted and compiled on Ubuntu 20.04 using python3 and 
 
 Usage
 -----------
-Interactive Mode
+<p>Interactive Mode</p>
 
 ```
 $./console.py
 (hbnb) <command>
 ```
 
-Non-Interactive Mode
+<p>Non-Interactive Mode</p>
 
 ```
 $ echo "<command>" | ./console.py
 ```
 
-
-
-<p>Point abour the clone of AirBnB</p>
-
-```
-to complete more information
-```
 ---
-List of allowed functions
+Example
 -----------
 
 ```
-MORE INFORMATION INSIDE
+$./console.py
+(hbnb) all....
+
 ```
 
 ---
-Compilation
+Command
 ------------
 
-The clone will be use for more ...
+<table style= "width:90%">
+	<tr>
+		<th>Command</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>2</td>
+                <td>2</td>
+                <td>2</td>
+                <td>2</td>
+	</tr>
+</table>
 
 ```
 here the information
-```
-
----
-Examples
------------
-```
-In this part will be put some examples
 ```
 
 ---
