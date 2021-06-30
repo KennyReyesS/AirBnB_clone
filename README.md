@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-        In this project we going to learn how to build a the forst part of the project clone AirBnB
+        In this project we going to learn how to build a the first part of the project clone AirBnB
 </p>
 
 ---
