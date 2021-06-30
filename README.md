@@ -54,31 +54,27 @@ Command
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td>1</td>
-		<td>1</td>
+		<td>All <class name> </td>
+		<td>Print all string of all instances based on the class name</td>
 	</tr>
 	<tr>
-		<td>2</td>
-                <td>2</td>
+		<td>Show <class name> </td>
+                <td>Print the string of instance based in the class name</td>
 	</tr>
 	<tr>
-                <td>3</td>
-                <td>3</td>
+                <td>create <class name> </td>
+                <td>create a new instance/object</td>
         </tr>
 	<tr>
-                <td>4</td>
-                <td>4</td>
+                <td>Update <class name> </td>
+                <td>Updates an instance based on te class name</td>
         </tr>
 	<tr>
-                <td>5</td>
-                <td>5</td>
+                <td>quit</td>
+                <td>Exit the program</td>
         </tr>
 
 </table>
-
-```
-here the information
-```
 
 ---
 ## [Authors](https://github.com/KennyReyesS/AirBnB_clone/blob/main/AUTHORS)
