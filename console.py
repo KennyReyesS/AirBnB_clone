@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
             print('** instance id missing **')
         elif "{}.{}".format(arg_split[0], arg_split[1]) in dic_obj.keys():
             del dic_obj["{}.{}".format(arg_split[0], arg_split[1])]
-            model.storage.save()
+            models.storage.save()
         else:
             print("** no instance found **")
 
