@@ -8,17 +8,6 @@ import unittest
 class TestPlace(unittest.TestCase):
     """Tests for Place Class"""
 
-    def test_pep8_place(self):
-        """pep8 test.
-        Makes sure the Python code is up to the pep8 standard.
-        """
-        syntax = pep8.StyleGuide(quit=True)
-        check = syntax.check_files(['models/place.py'])
-        self.assertEqual(
-            check.total_errors, 0,
-            "Found code style errors (and warnings)."
-        )
-
     def test_is_subclass(self):
         """Test that Place is a subclass of BaseModel"""
         place = Place()
