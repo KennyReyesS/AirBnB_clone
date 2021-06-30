@@ -7,22 +7,33 @@
 </p>
 
 <p align="center">
-        In this project you can see the first part of the project Clone of AirBnB
+        In this project we going to learn how to build a the forst part of the project clone AirBnB
 </p>
 
 ---
 
-Description
+Coding Style
 -----------
-In this repository you have
+All python files are interpreted and compiled on Ubuntu 20.04 using python3 and PEP 8 style.
 
-<ol>
-        <li>The Clone.</li>
-        <li>The clone.</li>
-        <li>The clone.</li>
-        <li>The clone</li>
-        <li>The clone.</li>
-</ol>
+
+---
+
+Usage
+-----------
+Interactive Mode
+
+```
+$./console.py
+(hbnb) <command>
+```
+
+Non-Interactive Mode
+
+```
+$ echo "<command>" | ./console.py
+```
+
 
 
 <p>Point abour the clone of AirBnB</p>
