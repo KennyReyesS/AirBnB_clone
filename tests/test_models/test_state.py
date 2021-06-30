@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-"""BaseModel Class unittest"""
+"""State Class unittest"""
 import unittest
