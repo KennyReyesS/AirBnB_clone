@@ -7,6 +7,7 @@ from uuid import uuid4
 from datetime import datetime
 from models.base_model import BaseModel
 import pep8
+from models import storage
 
 
 class TestBaseModel(unittest.TestCase):
@@ -89,8 +90,14 @@ class TestBaseModel(unittest.TestCase):
         self.obj.save()
         created2 = self.obj.created_at
         updated2 = self.obj.updated_at
+        self.assertEqual(type(updated1), type(updated2))
+        self.assertEqual(type(created1), type(created2))
         self.assertNotEqual(updated1, updated2)
         self.assertEqual(created1, created2)
+
+    def moretype_test(self):
+        self.assertTrue(type(self.obj.updated_at), datetime.utcnow())
+        self.assertTrue(type(self.obj.created_at), datetime.utcnow())
 
     def test_save_method_with_one_param(self):
         regex = 'takes 1 positional argument but 2 were given'
