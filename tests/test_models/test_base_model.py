@@ -16,16 +16,16 @@ class TestBaseModel(unittest.TestCase):
         self.obj = BaseModel()
         self.obj2 = BaseModel()
 
-        def test_pep8_base_model(self):
-            """pep8 test.
-            Makes sure the Python code is up to the pep8 standard.
-            """
-            syntax = pep8.StyleGuide(quit=True)
-            check = syntax.check_files(['models/base_model.py'])
-            self.assertEqual(
-                check.total_errors, 0,
-                "Found code style errors (and warnings)."
-            )
+    def test_pep8_base_model(self):
+        """pep8 test.
+        Makes sure the Python code is up to the pep8 standard.
+        """
+        syntax = pep8.StyleGuide(quit=True)
+        check = syntax.check_files(['models/base_model.py'])
+        self.assertEqual(
+            check.total_errors, 0,
+            "Found code style errors (and warnings)."
+        )
 
     def test_attr_types(self):
         self.assertIs(type(self.obj.id), str)
