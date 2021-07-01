@@ -83,6 +83,12 @@ class TestBaseModel(unittest.TestCase):
         self.assertNotEqual(self.obj.created_at, self.obj.updated_at)
         self.assertLess(self.obj.created_at, self.obj.updated_at)
 
+    def test_save_updated(self):
+        updated1 = self.obj.updated_at
+        self.obj.save()
+        updated2 = self.obj.updated_at
+        self.assertNotEqual(updated1, updated2)
+
     def test_save_method_with_one_param(self):
         regex = 'takes 1 positional argument but 2 were given'
         with self.assertRaisesRegex(TypeError, regex):
