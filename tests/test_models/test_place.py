@@ -1,14 +1,27 @@
 #!/usr/bin/python3
-"""Place Class unittest"""
+"""Defines unittests for place.py"""
 from models.base_model import BaseModel
 from models.place import Place
 import unittest
+import pep8
+from datetime import datetime
 
 
 class TestPlace(unittest.TestCase):
     """Tests for Place Class"""
 
-    def test_is_subclass(self):
+    def test_pep8_place(self):
+        """pep8 test.
+        Makes sure the Python code is up to the pep8 standard.
+        """
+        syntax = pep8.StyleGuide(quit=True)
+        check = syntax.check_files(['models/place.py'])
+        self.assertEqual(
+            check.total_errors, 0,
+            "Found code style errors (and warnings)."
+        )
+
+    def test_is_subclass_place(self):
         """Test that Place is a subclass of BaseModel"""
         place = Place()
         self.assertIsInstance(place, BaseModel)
@@ -16,28 +29,39 @@ class TestPlace(unittest.TestCase):
         self.assertTrue(hasattr(place, "created_at"))
         self.assertTrue(hasattr(place, "updated_at"))
 
+    def test_type_place(self):
+        """Test type of id, created_at and updated_at"""
+        place = Place()
+        self.assertEqual(type(place.id), str)
+        self.assertEqual(type(place.created_at), datetime)
+        self.assertEqual(type(place.updated_at), datetime)
+
     def test_city_id(self):
         """Test if Place has attr city_id and it's empty string"""
         place = Place()
         self.assertTrue(hasattr(place, "city_id"))
+        self.assertEqual(type(place.city_id), str)
         self.assertEqual(place.city_id, "")
 
     def test_user_id(self):
         """Test if Place has attr user_id and it's an empty string"""
         place = Place()
         self.assertTrue(hasattr(place, "user_id"))
+        self.assertEqual(type(place.user_id), str)
         self.assertEqual(place.user_id, "")
 
     def test_name(self):
         """Test if Place has attr name and it's an empty string"""
         place = Place()
         self.assertTrue(hasattr(place, "name"))
+        self.assertEqual(type(place.name), str)
         self.assertEqual(place.name, "")
 
     def test_description(self):
         """Test if Place has attr description and it's an empty string"""
         place = Place()
         self.assertTrue(hasattr(place, "description"))
+        self.assertEqual(type(place.description), str)
         self.assertEqual(place.description, "")
 
     def test_number_rooms(self):
