@@ -23,7 +23,7 @@ class TestFileStorage(unittest.TestCase):
         Makes sure the Python code is up to the pep8 standard.
         """
         syntax = pep8.StyleGuide(quit=True)
-        check = syntax.check_files(['models/base_model.py'])
+        check = syntax.check_files(['models/engine/file_storage.py'])
         self.assertEqual(
             check.total_errors, 0,
             "Found code style errors (and warnings)."
