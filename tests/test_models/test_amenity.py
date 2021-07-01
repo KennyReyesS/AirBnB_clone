@@ -40,7 +40,3 @@ class TestAmenity(unittest.TestCase):
     def test_attrIsempty_amenity(self):
         amenity = Amenity()
         self.assertEqual(amenity.name, "")
-
-
-
-
