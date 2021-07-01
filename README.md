@@ -35,13 +35,52 @@ $ echo "<command>" | ./console.py
 ```
 
 ---
-Example
+Examples
 -----------
 
+help [command name]:
 ```
 $./console.py
-(hbnb) all....
+(hbnb) help create
+Create a new instance of BaseModel and save in JSON
+(hbnb)
+```
 
+create command:
+```
+(hbnb) create BaseModel
+4811b20d-715b-4b60-bcfc-be68c9074a0d
+(hbnb)
+```
+
+all command:
+```
+(hbnb) all BaseModel
+["[BaseModel] (4811b20d-715b-4b60-bcfc-be68c9074a0d) {'id': '4811b20d-715b-4b60-bcfc-be68c9074a0d', 'created_at': datetime.datetime(2021, 7, 1, 0, 59, 53, 378597), 'updated_at': datetime.datetime(2021, 7, 1, 0, 59, 53, 378612)}"]
+(hbnb)
+```
+
+show command:
+```
+(hbnb) show BaseModel 4811b20d-715b-4b60-bcfc-be68c9074a0d
+[BaseModel] (4811b20d-715b-4b60-bcfc-be68c9074a0d) {'id': '4811b20d-715b-4b60-bcfc-be68c9074a0d', 'created_at': datetime.datetime(2021, 7, 1, 0, 59, 53, 378597), 'updated_at': datetime.datetime(2021, 7, 1, 0, 59, 53, 378612)}
+(hbnb)
+```
+
+update command:
+```
+(hbnb) update BaseModel 4811b20d-715b-4b60-bcfc-be68c9074a0d first_name "betty"
+(hbnb) show BaseModel 4811b20d-715b-4b60-bcfc-be68c9074a0d
+[BaseModel] (4811b20d-715b-4b60-bcfc-be68c9074a0d) {'first_name': 'betty', 'created_at': datetime.datetime(2021, 7, 1, 0, 59, 53, 378597), 'updated_at': datetime.datetime(2021, 7, 1, 0, 59, 53, 378612), 'id': '4811b20d-715b-4b60-bcfc-be68c9074a0d'}
+(hbnb)
+```
+
+destroy command:
+```
+(hbnb) destroy BaseModel 4811b20d-715b-4b60-bcfc-be68c9074a0d
+(hbnb) show BaseModel 4811b20d-715b-4b60-bcfc-be68c9074a0d
+** no instance found **
+(hbnb)
 ```
 
 ---
@@ -54,19 +93,23 @@ Command
 		<th>Description</th>
 	</tr>
 	<tr>
-		<td>All <class name> </td>
+		<td>help [command name] </td>
+		<td>Print a help string containing instructions about the commands</td>
+	</tr>
+	<tr>
+		<td>all [class name] </td>
 		<td>Print all string of all instances based on the class name</td>
 	</tr>
 	<tr>
-		<td>Show <class name> </td>
+		<td>show [class name] [id] </td>
                 <td>Print the string of instance based in the class name</td>
 	</tr>
 	<tr>
-                <td>create <class name> </td>
+                <td>create [class name] </td>
                 <td>create a new instance/object</td>
         </tr>
 	<tr>
-                <td>Update <class name> </td>
+                <td>update [class name] [attribute name] ["attribute value"] </td>
                 <td>Updates an instance based on te class name</td>
         </tr>
 	<tr>
