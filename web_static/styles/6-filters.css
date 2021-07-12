@@ -67,6 +67,7 @@ button:hover {
   width: 100%;
   top: 100%;
   padding-bottom: 50px;
+  z-index: 1;
 }
 .locations .popover ul li {
   padding-right: 20px;
@@ -82,6 +83,7 @@ button:hover {
   left: -5px;
   padding-top: 25px;
   padding-bottom: 25px;
+  z-index: 1;
 }
 .popover, .popover ul {
   list-style-type: none;
