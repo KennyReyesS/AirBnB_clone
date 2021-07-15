@@ -23,6 +23,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  padding-bottom: 60px;
 }
 
 .price_by_night {
